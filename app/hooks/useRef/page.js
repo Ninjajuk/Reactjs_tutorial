@@ -11,8 +11,8 @@ function RefHook() {
   return (
     <div>
       <h1>Hi Ref</h1>
-      <input ref={inputRef} type="text" />
-      <button onClick={handleRef}>Click</button>
+      <input ref={inputRef} type="text" className="p-2 bg-gray-100 border-3 mr-4"/>
+      <button onClick={handleRef} className="p-2 bg-red-500 rounded-full">Click</button>
     </div>
   );
 }
