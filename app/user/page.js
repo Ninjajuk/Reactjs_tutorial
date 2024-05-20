@@ -1,7 +1,10 @@
 'use client'
-import React, { useEffect, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
+
 
 const UserData = () => {
+
+  // console.log('className is changing',className)
     const [user,setUser]=useState([])
     const [error, setError] = useState(null);
 // console.log("userrData page");
@@ -26,9 +29,13 @@ const UserData = () => {
         fetchUser()
     },[])
 
+
+
   return (
-    <div>
+
+      <section >
       <h1>UserData</h1>
+    
       <ul>
         {user.map((item) => (
           <li key={item.id}>
@@ -39,7 +46,9 @@ const UserData = () => {
         ))}
       </ul>
       <p> {error}</p>
-    </div>
+      </section>
+
+
   );
 }
 
