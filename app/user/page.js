@@ -1,5 +1,6 @@
 'use client'
 import React, { useContext, useEffect, useState } from 'react'
+import SelectProduct from './SelectCategory';
 
 
 const UserData = () => {
@@ -46,6 +47,7 @@ const UserData = () => {
         ))}
       </ul>
       <p> {error}</p>
+      <SelectProduct/>
       </section>
 
 
