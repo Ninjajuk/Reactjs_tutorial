@@ -42,7 +42,7 @@ const SelectProduct = () => {
   };
 
   const calculatePrice = (unit, quantity) => {
-    // Example pricing logic
+
     const prices = {
       'kg': { '1 kg': 10, '2 kg': 18, '5 kg': 40, '10 kg': 75 },
       'gm': { '250 gm': 3, '500 gm': 5, '1 kg': 10 },
