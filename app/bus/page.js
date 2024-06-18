@@ -8,8 +8,12 @@ import {busServices} from './data'
 import Footer1 from './components/footer/Footer';
 import FAQRelatedBooking from './components/FAQ/FAQRelatedBooking';
 import ScrollInformationInfinitely from './components/ScrolllNew/ScrollInformationInfinitely';
-import { FaAngleDown, FaAngleUp, FaArrowDown, FaMoon } from 'react-icons/fa';
+import { FaAlignJustify, FaAngleDown, FaAngleUp, FaArrowDown, FaMoon } from 'react-icons/fa';
 import useClickOutside from './components/customhooks/useClickOutside';
+import MyInput from './components/Input';
+import {cities} from './data'
+
+
 const BusBookingHome = () => {
   const[opensubmenu,setOpensubmenu]=useState(false)
 
@@ -36,15 +40,25 @@ const BusBookingHome = () => {
         <section className="w-full flex flex-col ">
           <ScrollInformationInfinitely />
           <nav className="sticky top-0 scroll-smooth z-10 flex items-center justify-between bg-white shadow-lg  min-h-[4rem] lg:px-[10rem]">
-            <div className="">
-              <ul className="flex items-center space-x-4">
+            <div className="flex items-center  justify-around">
+              <h1 className="px-2 text-lg lg:text-2xl font-bold text-purple-900 leading-5 lg:leading-8">
+                Teghiya Travels
+              </h1>
+              {/* <ul className="flex items-center space-x-4">
                 <li>Home</li>
-                {/* <li>+917542067763</li> */}
-                {/* <li>Contact</li>
-                <li>Contact</li> */}
-              </ul>
+                <li>+917542067763</li>
+                <li>Contact</li>
+                <li>Contact</li>
+              </ul> */}
             </div>
-            <div className="hidden lg:flex relative  space-x-4 text-gray-600" ref={menuRef}>
+            <div className='px-2'>
+              <FaAlignJustify className=" justify-end lg:hidden w-6 h-6 text-purple-800" />
+            </div>
+
+            <div
+              className="hidden lg:flex relative  space-x-4 text-gray-600"
+              ref={menuRef}
+            >
               <a
                 href="#"
                 onClick={() => setOpensubmenu(!opensubmenu)}
@@ -126,20 +140,20 @@ const BusBookingHome = () => {
               {/* <p>Account</p> */}
             </div>
           </nav>
-          <div className="lg:px-[10rem] py-4">
+          {/* <div className="lg:px-[10rem] py-4">
             <h1 className=" text-lg lg:text-2xl font-bold  py-4 text-primary">
               Arunachal Pradesh Online Bus Ticket Booking Site
             </h1>
-          </div>
+          </div> */}
 
-          <div className="h-64 lg:min-h-[400px] relative">
+          <div className="h-64 lg:min-h-[600px] relative">
             <picture className="w-full h-full">
               <div className="w-full h-full overflow-hidden">
                 <Image
-                  width={500}
-                  height={500}
+                  width={800}
+                  height={800}
                   alt="Picture of the hero"
-                  src="/herosection.jpg"
+                  src="/pangateng-tso-lake.jpg"
                   className="w-full h-full object-cover object-center"
                 />
               </div>
@@ -147,11 +161,12 @@ const BusBookingHome = () => {
             <div className="absolute inset-0 flex items-center justify-center">
               <div className="w-full lg:w-auto flex flex-col lg:flex-row p-4 rounded-md bg-white shadow-lg">
                 <div className="relative w-full lg:w-auto flex flex-col lg:flex-row mb-2 lg:mb-0 ">
-                  <input
+                  {/* <input
                     type="text"
                     placeholder="From"
                     className="w-full bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 p-2.5"
-                  />
+                  /> */}
+                  <MyInput placeholder="From" staticData={cities} />
                 </div>
                 <div className="flex items-center justify-center ">
                   <button className="hidden lg:block">
@@ -163,11 +178,12 @@ const BusBookingHome = () => {
                 </div>
 
                 <div className="w-full lg:w-auto mb-2 lg:mb-0 lg:mr-2 ">
-                  <input
+                  {/* <input
                     type="text"
                     placeholder="To"
                     className="w-full bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 p-2.5 placeholder:pl-4"
-                  />
+                  /> */}
+                  <MyInput placeholder="To" staticData={cities} />
                 </div>
 
                 <div className="w-full lg:w-auto mb-2 lg:mb-0 lg:mr-2">
