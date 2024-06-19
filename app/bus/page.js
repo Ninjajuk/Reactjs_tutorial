@@ -16,6 +16,11 @@ import {cities} from './data'
 
 const BusBookingHome = () => {
   const[opensubmenu,setOpensubmenu]=useState(false)
+  const[mobilemenu,setMobileMenu]=useState(false)
+
+  const handlemobilemenuOpen=()=>{
+    setMobileMenu(!mobilemenu)
+  }
 
   const menuRef = useRef(null);
 
@@ -36,7 +41,7 @@ const BusBookingHome = () => {
   return (
     <>
       {/* <button className='p-2 bg-buttonWarning w-16 rounded-md text-white'>Add</button> */}
-      <main className="w-full h-screen bg-white">
+      <main className="w-full h-screen bg-white relative">
         <section className="w-full flex flex-col ">
           <ScrollInformationInfinitely />
           <nav className="sticky top-0 scroll-smooth z-10 flex items-center justify-between bg-white shadow-lg  min-h-[4rem] lg:px-[10rem]">
@@ -51,9 +56,19 @@ const BusBookingHome = () => {
                 <li>Contact</li>
               </ul> */}
             </div>
-            <div className='px-2'>
+            <div onClick={handlemobilemenuOpen} className="px-2">
               <FaAlignJustify className=" justify-end lg:hidden w-6 h-6 text-purple-800" />
             </div>
+            {mobilemenu && (
+        <div className={`absolute top-[4rem] left-0  w-64  h-[calc(100vh-4rem)] bg-gray-400  transition-transform ease-in-out duration-700 transform  ${mobilemenu ? 'transform translate-x-0 ' : '-translate-x-full '}`}>
+          <ul className="p-4 space-y-2">
+            <li><a href="#home" className="block text-white">Home</a></li>
+            <li><a href="#about" className="block text-white">About</a></li>
+            <li><a href="#services" className="block text-white">Services</a></li>
+            <li><a href="#contact" className="block text-white">Contact</a></li>
+          </ul>
+        </div>
+      )}
 
             <div
               className="hidden lg:flex relative  space-x-4 text-gray-600"

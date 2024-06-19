@@ -31,6 +31,7 @@ module.exports = {
         textHighlight: "#e67e22",
         textMuted: "#7f8c8d",
       },
+      
     },
   },
   plugins: [],
