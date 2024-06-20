@@ -45,7 +45,7 @@ const BusBookingHome = () => {
         <section className="w-full flex flex-col ">
           <ScrollInformationInfinitely />
           <nav className="sticky top-0 scroll-smooth z-10 flex items-center justify-between bg-white shadow-lg  min-h-[4rem] lg:px-[10rem]">
-            <div className="flex items-center  justify-around">
+            <div className="flex items-center  justify-around ">
               <h1 className="px-2 text-lg lg:text-2xl font-bold text-purple-900 leading-5 lg:leading-8">
                 Teghiya Travels
               </h1>
@@ -56,17 +56,27 @@ const BusBookingHome = () => {
                 <li>Contact</li>
               </ul> */}
             </div>
-            <div onClick={handlemobilemenuOpen} className="px-2">
+            <div onClick={handlemobilemenuOpen} className="px-2 cursor-pointer">
               <FaAlignJustify className=" justify-end lg:hidden w-6 h-6 text-purple-800" />
             </div>
             {mobilemenu && (
-        <div className={`absolute top-[4rem] left-0  w-64  h-[calc(100vh-4rem)] bg-gray-400  transition-transform ease-in-out duration-700 transform  ${mobilemenu ? 'transform translate-x-0 ' : '-translate-x-full '}`}>
+        <div className={`absolute top-[4rem] left-0  w-64  h-[calc(100vh-4rem)] bg-gray-400  transition-transform ease-in-out duration-700 transform   ${mobilemenu ? 'transform translate-x-0 ' : '-translate-x-full '}`}>
+          {/* <div className='w-full flex items-center justify-between p-4'>
+            <div className='w-10 h-10 rounded-full'>
+              <img src='/pangateng-tso-lake.jpg' className='w-full h-full object-cover object-center'/> 
+            </div>
+            <div className='ml-2 '>Ajuk</div>
+          </div> */}
+          <div className='flex-grow bg-sky-600'>
           <ul className="p-4 space-y-2">
             <li><a href="#home" className="block text-white">Home</a></li>
             <li><a href="#about" className="block text-white">About</a></li>
             <li><a href="#services" className="block text-white">Services</a></li>
             <li><a href="#contact" className="block text-white">Contact</a></li>
           </ul>
+          </div>
+          <div className=' h-12 flex-shrink-0 mt-auto bg-green-900'>Samsu</div>
+
         </div>
       )}
 
@@ -94,7 +104,7 @@ const BusBookingHome = () => {
                 </div>
               )}
               <a
-                href="#"
+                href="/bus/Cancellation"
                 className="flex items-center hover:bg-gray-200 hover:text-purple-800 p-2 rounded-md"
               >
                 Cancellation
@@ -224,7 +234,7 @@ const BusBookingHome = () => {
                   key={item.id}
                   className="h-full bg-white pb-2  rounded-md shadow-lg"
                 >
-                  <div className="w-full h-3/4 overflow-hidden rounded-md shadow-lg">
+                  <div className="w-full h-64 lg:h-3/4 overflow-hidden rounded-md shadow-lg">
                     <img
                       src={item.img}
                       className="w-full h-full object-fill object-center"
