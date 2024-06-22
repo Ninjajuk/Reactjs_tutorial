@@ -13,6 +13,8 @@ import useClickOutside from './components/customhooks/useClickOutside';
 import MyInput from './components/Input';
 import {cities} from './data'
 
+import LoginForm from './components/LoginForm';
+
 
 const BusBookingHome = () => {
   const[opensubmenu,setOpensubmenu]=useState(false)
@@ -37,6 +39,13 @@ const BusBookingHome = () => {
       </ul>
     );
   };
+  const [logmodal,setLogModal]=useState(false)
+
+  const handelLogin=()=>{
+    // alert('Login Clciked')
+    setLogModal(!logmodal)
+  }
+  
 
   return (
     <>
@@ -116,8 +125,9 @@ const BusBookingHome = () => {
                 Contact Us
               </a>
               <a
-                href="#"
-                className="flex items-center hover:bg-gray-200 hover:text-purple-800 p-2 rounded-md"
+  
+                onClick={()=>handelLogin()}
+                className="flex items-center hover:bg-gray-200 hover:text-purple-800 p-2 rounded-md cursor-pointer"
               >
                 Login
               </a>
@@ -227,6 +237,8 @@ const BusBookingHome = () => {
             </div>
           </div>
 
+    
+
           <div className="w-full min-h-[24rem] lg:px-[10rem] grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2 py-4 ">
             {busServices.map((item) => (
               <>
@@ -257,8 +269,12 @@ const BusBookingHome = () => {
           <FAQRelatedBooking />
 
           <Footer1 />
+
         </section>
+        {logmodal&&(<LoginForm mobilemenu={mobilemenu} handelLogin={handelLogin}/>)}
+
       </main>
+
     </>
   );
 }
