@@ -34,7 +34,7 @@ const BusBookingHome = () => {
   const submenu = () => {
     return (
       <ul className="bg-white border border-gray-300 rounded-md shadow-lg mt-2 p-2">
-        <li className="p-2 hover:bg-gray-200 cursor-pointer rounded-md">View Booking</li>
+        <li className="p-2 hover:bg-gray-200 cursor-pointer rounded-md"><a href='/bus/mybooking'>My Booking</a></li>
         <li className="p-2 hover:bg-gray-200 cursor-pointer rounded-md">Phone Booking</li>
       </ul>
     );
@@ -78,10 +78,10 @@ const BusBookingHome = () => {
           </div> */}
           <div className='flex-grow bg-sky-600'>
           <ul className="p-4 space-y-2">
-            <li><a href="#home" className="block text-white">Home</a></li>
+            <li><a href="/" className="block text-white">Home</a></li>
             <li><a href="#about" className="block text-white">About</a></li>
             <li><a href="#services" className="block text-white">Services</a></li>
-            <li><a href="#contact" className="block text-white">Contact</a></li>
+            <li><a href="/bus/contact-us" className="block text-white">Contact</a></li>
           </ul>
           </div>
           <div className=' h-12 flex-shrink-0 mt-auto bg-green-900'>Samsu</div>
@@ -119,7 +119,7 @@ const BusBookingHome = () => {
                 Cancellation
               </a>
               <a
-                href="#"
+                href="/bus/contact-us"
                 className="flex items-center hover:bg-gray-200 hover:text-purple-800 p-2 rounded-md"
               >
                 Contact Us
@@ -271,7 +271,7 @@ const BusBookingHome = () => {
           <Footer1 />
 
         </section>
-        {logmodal&&(<LoginForm mobilemenu={mobilemenu} handelLogin={handelLogin}/>)}
+        {logmodal&&(<LoginForm closeSubmenu={closeSubmenu} handelLogin={handelLogin}/>)}
 
       </main>
 

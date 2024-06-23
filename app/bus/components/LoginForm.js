@@ -2,30 +2,23 @@
 'use client'
 import React, { useRef, useState } from "react";
 
-// import { useNavigate } from "react-router-dom";
 
 import { MdOutlineClear } from "react-icons/md";
 import useClickOutside from "./customhooks/useClickOutside";
 import OTPForm from "../authentication/componetsauth/OTPForm";
 
-const LoginForm = ({onClick,mobilemenu,handelLogin}) => {
+const LoginForm = ({onClick,handelLogin}) => {
   const [phone, setPhone] = useState("");
   const [loading, setLoading] = useState(false);
-  
+
   const [OTP, setOTP] = useState('');
 
 
-const menuRef = useRef(null);
-
-
-// useClickOutside(menuRef, closeSubmenu);
   const handleLogin = (e) => {
     e.preventDefault();
     // login logic 
-    console.log(phone)
-    setOTP('123')
-
-
+    // console.log(phone)
+    setOTP(phone)
   };
 
 
@@ -34,7 +27,7 @@ const menuRef = useRef(null);
 
   return (
     <div
-      ref={menuRef}
+
       className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50 "
     >
       <div className="  flex justify-center items-center relative    max-w-md   overflow-y-auto min-h-64">
@@ -54,38 +47,57 @@ const menuRef = useRef(null);
               Teghiya Travels
             </span>
           </h2>
-
-          <div className="mb-4">
-            <label htmlFor="phone" className="block text-gray-600">
-              Phone
-            </label>
-            <div className="flex items-center border border-gray-300 rounded px-3 py-2 focus-within:border-blue-400">
-              <span className="text-gray-600 mr-2">+91</span>
-              <input
-                type="tel"
-                id="phone"
-                className="w-full focus:outline-none"
-                placeholder="Enter your phone"
-                value={phone}
-                onChange={(e) => setPhone(e.target.value)}
-                required
-              />
+          {OTP ? (
+            <>
+              <h1 className="py-4">
+                OTP Sent to <span className="ml-2 text-sky-800">{phone}</span>
+              </h1>
+              <OTPForm />
+              <button
+                type="submit"
+                disabled={phone.length < 10}
+                className={`w-full text-white rounded-lg py-2 transition duration-300 border ${
+                  phone.length < 10
+                    ? "bg-gray-200 border-gray-200 cursor-not-allowed"
+                    : "bg-[#ed3237] border-[#ed3237] hover:bg-[#e74f5b]"
+                }`}
+              >
+                {loading ? "Loadind..." : "Verify OTP"}
+              </button>
+            </>
+          ) : (
+            <div className="mb-4">
+              <label htmlFor="phone" className="block text-gray-600">
+                Phone
+              </label>
+              <div className="flex items-center border border-gray-300 rounded px-3 py-2 focus-within:border-blue-400">
+                <span className="text-gray-600 mr-2">+91</span>
+                <input
+                  type="tel"
+                  id="phone"
+                  className="w-full focus:outline-none"
+                  placeholder="Enter your phone"
+                  value={phone}
+                  onChange={(e) => setPhone(e.target.value)}
+                  required
+                />
+              </div>
+              <p className="text-red-800 text-x ">Error</p>
+              <button
+                type="submit"
+                disabled={phone.length < 10}
+                className={`w-full text-white rounded-lg py-2 transition duration-300 border ${
+                  phone.length < 10
+                    ? "bg-gray-200 border-gray-200 cursor-not-allowed"
+                    : "bg-[#ed3237] border-[#ed3237] hover:bg-[#e74f5b]"
+                }`}
+              >
+                {OTP ? "Loading..." : "Generate OTP"}
+              </button>
             </div>
-            <p className="text-red-800 text-x">Error</p>
-          </div>
-          {/* {OTP ? <OTPForm/> : null} */}
-          <OTPForm/>
-          <button
-            type="submit"
-            disabled={phone.length < 10}
-            className={`w-full text-white rounded-lg py-2 transition duration-300 border ${
-              phone.length < 10
-                ? "bg-gray-200 border-gray-200 cursor-not-allowed"
-                : "bg-[#ed3237] border-[#ed3237] hover:bg-[#e74f5b]"
-            }`}
-          >
-           {OTP ? 'Verify OTP':'Generate OTP'}
-          </button>
+          )}
+
+
 
           <div className="mt-4 flex justify-between items-center">
             <div className="border-t border-gray-400 flex-grow"></div>

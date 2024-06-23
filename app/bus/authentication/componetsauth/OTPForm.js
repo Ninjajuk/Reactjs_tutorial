@@ -48,7 +48,7 @@ const OTPForm = () => {
         </div>
         <p
           id="helper-text-explanation"
-          className="mt-2 text-sm text-gray-500 dark:text-gray-400"
+          className="my-2 text-sm text-gray-500 dark:text-gray-400"
         >
           Please fill the 6 digit code we sent via email.
         </p>
