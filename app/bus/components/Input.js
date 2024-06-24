@@ -32,8 +32,9 @@ const MyInput = ({placeholder = "",staticData}) => {
         />
         {showSuggestions && (
           <ul className="absolute top-12 z-10 w-full min-w-48 max-h-40 overflow-y-auto  bg-white  p-4 rounded-md shadow-md">
-            {staticData.map((item) => (
+            {staticData.map((item,index) => (
             <li 
+            key={index}
             onClick={()=>handleselectInput(item)}
             className="space-x-2 py-2 px-2 hover:bg-gray-200 rounded-md cursor-pointer">
               {item}

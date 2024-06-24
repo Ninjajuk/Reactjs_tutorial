@@ -33,8 +33,8 @@ const BusSearchResultPage = () => {
                   </p>
 
                   <ul className="hidden lg:flex space-x-1">
-                    {item.amenities.map((amenties) => (
-                      <li className="flex px-2">{amenties.icon}</li>
+                    {item.amenities.map((amenties,index) => (
+                      <li key={index} className="flex px-2">{amenties.icon}</li>
                     ))}
                   </ul>
                 </div>

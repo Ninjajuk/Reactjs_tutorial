@@ -43,16 +43,16 @@ export const navItems=[
     label: 'Manage Booking',
     submenu: [
       { label: 'My Booking', submenu: [
-        { label: 'Phone booking', onClick: () => handleClick('Phone booking') },
-        { label: 'Email Booking', onClick: () => handleClick('Submenu 1-1-2') },
+        { label: 'Phone booking',  },
+        { label: 'Email Booking', },
       ]},
-      { label: 'Phone Booking', onClick: () => handleClick('Submenu 1-2') },
+      { label: 'Phone Booking',  },
     ],
   },
   {
     label: 'Cancellation',
     submenu: [
-      { label: 'Submenu 2-1', onClick: () => handleClick('Submenu 2-1') },
+      { label: 'Submenu 2-1', },
       { label: 'Submenu 2-2', submenu: [
         { label: 'Submenu 2-2-1', onClick: () => handleClick('Submenu 2-2-1') },
         { label: 'Submenu 2-2-2', onClick: () => handleClick('Submenu 2-2-2') },
@@ -63,7 +63,7 @@ export const navItems=[
     label: 'Contact us',
     submenu: [
       { label: 'Submenu 3-1', onClick: () => handleClick('Submenu 3-1') },
-      { label: 'Submenu 3-2', onClick: () => handleClick('Submenu 3-2') },
+      { label: 'Submenu 3-2',  },
     ],
   },
   {
