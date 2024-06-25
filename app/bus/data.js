@@ -26,45 +26,52 @@ export const busServices = [
 ];
 
 export const cities = [
-  "New York",
-  "Los Angeles",
-  "Chicago",
-  "Houston",
-  "Phoenix",
-  "Philadelphia",
-  "San Antonio",
-  "San Diego",
-  "Dallas",
-  "San Jose","Delhi"
+  "Aizawl",
+  "Kolasib",
+  "Silchar",
+  "Shillong",
+  "Guwahati",
+  "Dibrugarh",
+  "Itanagar",
+  "Tawang",
+  "Ziro",
+  "Bomdila",
+  "Pasighat",
+  "Along",
+  "Tezu",
+  "Roing",
+  "Namsai",
+  "Changlang",
+  "Khonsa",
+  "Yingkiong",
+  "Daporijo",
+  "Anini",
+  "Seppa",
+  "Koloriang",
+  "Pangin",
+  "Mechuka",
+  "Tuting",
+  "Basar",
+  "Hawai",
+  "Longding",
+  "Ruksin",
+  "Deomali",
+  "Kanubari","Delhi"
 ];
 
 export const navItems=[
   {
     label: 'Manage Booking',
     submenu: [
-      { label: 'My Booking', submenu: [
-        { label: 'Phone booking',  },
-        { label: 'Email Booking', },
-      ]},
+      { label: 'My Booking', },
       { label: 'Phone Booking',  },
     ],
   },
   {
     label: 'Cancellation',
-    submenu: [
-      { label: 'Submenu 2-1', },
-      { label: 'Submenu 2-2', submenu: [
-        { label: 'Submenu 2-2-1', onClick: () => handleClick('Submenu 2-2-1') },
-        { label: 'Submenu 2-2-2', onClick: () => handleClick('Submenu 2-2-2') },
-      ]},
-    ],
   },
   {
     label: 'Contact us',
-    submenu: [
-      { label: 'Submenu 3-1', onClick: () => handleClick('Submenu 3-1') },
-      { label: 'Submenu 3-2',  },
-    ],
   },
   {
     label: 'Account',

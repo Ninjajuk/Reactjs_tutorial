@@ -8,7 +8,7 @@ import {busServices} from './data'
 import Footer1 from './components/footer/Footer';
 import FAQRelatedBooking from './components/FAQ/FAQRelatedBooking';
 import ScrollInformationInfinitely from './components/ScrolllNew/ScrollInformationInfinitely';
-import { FaAlignJustify, FaAngleDown, FaAngleUp, FaArrowDown, FaMoon } from 'react-icons/fa';
+import { FaAlignJustify, FaAngleDown, FaAngleUp, FaArrowDown, FaMoon, FaSignInAlt, FaTimes, FaUser } from 'react-icons/fa';
 import useClickOutside from './components/customhooks/useClickOutside';
 import MyInput from './components/Input';
 import {cities} from './data'
@@ -45,7 +45,15 @@ const BusBookingHome = () => {
     // alert('Login Clciked')
     setLogModal(!logmodal)
   }
-  
+
+  //Swap  from and To input values
+  const [from, setFrom] = useState('');
+  const [to, setTo] = useState('');
+
+  const handleSwap = () => {
+    setFrom(to);
+    setTo(from);
+  };
 
   return (
     <>
@@ -54,40 +62,92 @@ const BusBookingHome = () => {
         <section className="w-full flex flex-col ">
           <ScrollInformationInfinitely />
           <nav className="sticky top-0 scroll-smooth z-10 flex items-center justify-between bg-white shadow-lg  min-h-[4rem] lg:px-[10rem]">
-            <div className="flex items-center  justify-around ">
-              <h1 className="px-2 text-lg lg:text-2xl font-bold text-purple-900 leading-5 lg:leading-8">
+            <div className="w-full max-w-xs lg:max-w-sm">
+              <h1 className="px-2 text-lg lg:text-2xl font-bold text-purple-900 leading-5 lg:leading-8 truncate">
                 Teghiya Travels
               </h1>
-              {/* <ul className="flex items-center space-x-4">
-                <li>Home</li>
-                <li>+917542067763</li>
-                <li>Contact</li>
-                <li>Contact</li>
-              </ul> */}
             </div>
             <div onClick={handlemobilemenuOpen} className="px-2 cursor-pointer">
               <FaAlignJustify className=" justify-end lg:hidden w-6 h-6 text-purple-800" />
             </div>
             {mobilemenu && (
-        <div className={`absolute top-[4rem] left-0  w-64  h-[calc(100vh-4rem)] bg-gray-400  transition-transform ease-in-out duration-700 transform   ${mobilemenu ? 'transform translate-x-0 ' : '-translate-x-full '}`}>
-          {/* <div className='w-full flex items-center justify-between p-4'>
+              <div
+                className={`absolute flex flex-col top-[4rem] left-0  w-64  h-[calc(100vh-4rem)] bg-white  transition-transform ease-in-out duration-1000 transform  overflow-y-auto  ${
+                  mobilemenu ? "transform translate-x-0 " : "-translate-x-full "
+                }`}
+              >
+                {/* <div className='w-full flex items-center justify-between p-4'>
             <div className='w-10 h-10 rounded-full'>
               <img src='/pangateng-tso-lake.jpg' className='w-full h-full object-cover object-center'/> 
             </div>
             <div className='ml-2 '>Ajuk</div>
           </div> */}
-          <div className='flex-grow bg-sky-600'>
-          <ul className="p-4 space-y-2">
-            <li><a href="/" className="block text-white">Home</a></li>
-            <li><a href="#about" className="block text-white">About</a></li>
-            <li><a href="#services" className="block text-white">Services</a></li>
-            <li><a href="/bus/contact-us" className="block text-white">Contact</a></li>
-          </ul>
-          </div>
-          <div className=' h-12 flex-shrink-0 mt-auto bg-green-900'>Samsu</div>
+                <div className="flex-grow ">
+                  <div className="w-full flex items-center pl-6">
+                    {/* <div className="w-24 h-10 ">
+                      <img
+                        src="/pangateng-tso-lake.jpg"
+                        className="w-full h-full object-cover object-center"
+                      />
+                    </div> */}
+                    <h1 className="px-2 text-lg lg:text-2xl font-bold font-serif text-purple-900 leading-5 lg:leading-8 truncate">
+                      Welcome!
+                    </h1>
 
-        </div>
-      )}
+                    <div
+                      onClick={handlemobilemenuOpen}
+                      className="ml-auto cursor-pointer text-red-600 hover:text-red-800   "
+                    >
+                      <FaTimes className="w-8 h-8 p-2 bg-red-200  rounded-full" />
+                    </div>
+                  </div>
+
+                  <ul className="p-4 ">
+                    <li className="hover:bg-gray-100 hover:text-purple-800 tracking-wider font-serif text-gray-600 px-4 py-2 rounded-md">
+                      <a href="/" className="block ">
+                        Home
+                      </a>
+                    </li>
+                    <li className="hover:bg-gray-100 hover:text-purple-800 tracking-wider font-serif text-gray-600 px-4 py-2 rounded-md truncate">
+                      <a href="#about" className="block truncate ">
+                        Manage Booking
+                      </a>
+                    </li>
+                    <li className="hover:bg-gray-100 hover:text-purple-800 tracking-wider font-serif text-gray-600 px-4 py-2 rounded-md">
+                      <a href="#services" className="block ">
+                        Print Ticket
+                      </a>
+                    </li>
+                    <li className="hover:bg-gray-100 hover:text-purple-800 tracking-wider font-serif text-gray-600 px-4 py-2 rounded-md">
+                      <a href="#services" className="block ">
+                        Email/SMS
+                      </a>
+                    </li>
+                    <li className="hover:bg-gray-100 hover:text-purple-800 tracking-wider font-serif text-gray-600 px-4 py-2 rounded-md">
+                      <a href="/bus/Cancellation" className="block ">
+                        Cancellation
+                      </a>
+                    </li>
+                    <li className="hover:bg-gray-100 hover:text-purple-800 tracking-wider font-serif text-gray-600 px-4 py-2 rounded-md">
+                      <a href="/bus/contact-us" className="block ">
+                        Contact Us
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+                <div
+                  onClick={() => handelLogin()}
+                  className="flex items-center  h-12 bg-gray-400  mt-auto  p-4 cursor-pointer text-gray-600  font-serif"
+                >
+                  {/* <div>
+                    <FaSignInAlt className='w-4 h-4'/>
+                  </div> */}
+                  <div className="px-2">
+                    <h1>Account</h1>
+                  </div>
+                </div>
+              </div>
+            )}
 
             <div
               className="hidden lg:flex relative  space-x-4 text-gray-600"
@@ -96,9 +156,9 @@ const BusBookingHome = () => {
               <a
                 href="#"
                 onClick={() => setOpensubmenu(!opensubmenu)}
-                className=" flex items-center hover:bg-gray-200 hover:text-purple-800 p-2 rounded-md"
+                className=" flex items-center hover:bg-gray-200 hover:text-purple-800 p-2 rounded-md truncate"
               >
-                <span>Manage Booking</span>
+                <span className="truncate">Manage Booking</span>
                 <span className="ml-2">
                   {opensubmenu ? (
                     <FaAngleUp className="w-6 h-6" />
@@ -120,13 +180,12 @@ const BusBookingHome = () => {
               </a>
               <a
                 href="/bus/contact-us"
-                className="flex items-center hover:bg-gray-200 hover:text-purple-800 p-2 rounded-md"
+                className="flex items-center hover:bg-gray-200 hover:text-purple-800 p-2 rounded-md truncate"
               >
                 Contact Us
               </a>
               <a
-  
-                onClick={()=>handelLogin()}
+                onClick={() => handelLogin()}
                 className="flex items-center hover:bg-gray-200 hover:text-purple-800 p-2 rounded-md cursor-pointer"
               >
                 Login
@@ -201,14 +260,25 @@ const BusBookingHome = () => {
                     placeholder="From"
                     className="w-full bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 p-2.5"
                   /> */}
-                  <MyInput placeholder="From" staticData={cities} />
+                  <MyInput
+                    placeholder="From"
+                    staticData={cities}
+                    value={from}
+                    onChange={setFrom}
+                  />
                 </div>
                 <div className="flex items-center justify-center ">
-                  <button className="hidden lg:block">
+                  <button
+                    onClick={handleSwap}
+                    className="hidden lg:block bg-gray-200 rounded-full p-2"
+                  >
                     <MdOutlineSwapHoriz className="w-8 h-8 text-green-700 hover:text-green-900 font-bold" />
                   </button>
-                  <button className="block lg:hidden ">
-                    <MdOutlineSwapVert className="w-8 h-8 text-green-700 hover:text-green-900 font-bold" />
+                  <button
+                    onClick={handleSwap}
+                    className="block lg:hidden bg-green-100 hover:bg-green-400 rounded-full p-2 mb-1 "
+                  >
+                    <MdOutlineSwapVert className="w-8 h-8 text-green-500 hover:text-green-900 font-bold" />
                   </button>
                 </div>
 
@@ -218,7 +288,12 @@ const BusBookingHome = () => {
                     placeholder="To"
                     className="w-full bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 p-2.5 placeholder:pl-4"
                   /> */}
-                  <MyInput placeholder="To" staticData={cities} />
+                  <MyInput
+                    placeholder="To"
+                    staticData={cities}
+                    value={to}
+                    onChange={setTo}
+                  />
                 </div>
 
                 <div className="w-full lg:w-auto mb-2 lg:mb-0 lg:mr-2">
@@ -236,8 +311,6 @@ const BusBookingHome = () => {
               </div>
             </div>
           </div>
-
-    
 
           <div className="w-full min-h-[24rem] lg:px-[10rem] grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2 py-4 ">
             {busServices.map((item) => (
@@ -269,12 +342,11 @@ const BusBookingHome = () => {
           <FAQRelatedBooking />
 
           <Footer1 />
-
         </section>
-        {logmodal&&(<LoginForm closeSubmenu={closeSubmenu} handelLogin={handelLogin}/>)}
-
+        {logmodal && (
+          <LoginForm closeSubmenu={closeSubmenu} handelLogin={handelLogin} />
+        )}
       </main>
-
     </>
   );
 }

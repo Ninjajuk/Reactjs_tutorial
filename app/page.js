@@ -102,7 +102,7 @@ export default function Home() {
   const fetchUsers = async (search) => {
     try {
 
-        const response = await fetch( `https://dummyjson.com/users/search?q=${search}`); // Replace with your API endpoint
+        const response = await fetch( `https://dummyjson.com/users/search?q=${search}`); 
         const data = await response.json();
        console.log(data.users)
    setCities(data.users)

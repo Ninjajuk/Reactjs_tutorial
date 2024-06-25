@@ -1,13 +1,13 @@
 'use client'
 import React, { useState } from 'react'
 
-const MyInput = ({placeholder = "",staticData}) => {
+const MyInput = ({placeholder = "",staticData,value,onChange}) => {
     const [inputVal,setInputval]=useState('')
     const [showSuggestions, setShowSuggestions] = useState(false);
     const handleInputChange=(e)=>{
-        setInputval(e.target.value)
+      onChange(e.target.value);
         // console.log(inputVal)
-        if(inputVal.length>=4){
+        if(value.length>=4){
             setShowSuggestions(true)
         }
         else{
@@ -15,7 +15,7 @@ const MyInput = ({placeholder = "",staticData}) => {
         }
     }
     const handleselectInput=(item)=>{
-        setInputval(item)
+      onChange(item);
         console.log(item)
         setShowSuggestions(false)
 
@@ -26,7 +26,7 @@ const MyInput = ({placeholder = "",staticData}) => {
         <input
           type="text"
           placeholder={placeholder}
-          value={inputVal}
+          value={value}
           onChange={handleInputChange}
           className={`w-full  bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 p-2.5`}
         />
