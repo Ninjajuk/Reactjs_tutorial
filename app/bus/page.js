@@ -1,5 +1,5 @@
 'use client'
-import React, { useEffect, useRef, useState } from 'react'
+import React, { useContext, useEffect, useRef, useState } from 'react'
 import Seat from './components/Seat';
 import Image from 'next/image';
 import { MdOutlineSwapHoriz, MdOutlineSwapVert } from "react-icons/md";
@@ -14,6 +14,7 @@ import MyInput from './components/Input';
 import {cities} from './data'
 
 import LoginForm from './components/LoginForm';
+import { ThemeContext } from '../hooks/useContext/context';
 
 
 const BusBookingHome = () => {
@@ -54,11 +55,22 @@ const BusBookingHome = () => {
     setFrom(to);
     setTo(from);
   };
+  const usetheme = useContext(ThemeContext);
+  const [theme, setTheme] = useState(usetheme);
+
+
+
+      function handleTheme(){
+    
+        setTheme(theme === 'light' ? 'bg-gray-900 text-white' : 'light');
+        console.log('theme chnaged',theme)
+      }
 
   return (
     <>
       {/* <button className='p-2 bg-buttonWarning w-16 rounded-md text-white'>Add</button> */}
-      <main className="w-full h-screen bg-white relative">
+      <ThemeContext.Provider  value={{theme}}>
+      <main className={`w-full h-screen  ${theme?'bg-gray-900 ' : 'bg-white'} relative`}>
         <section className="w-full flex flex-col ">
           <ScrollInformationInfinitely />
           <nav className="sticky top-0 scroll-smooth z-10 flex items-center justify-between bg-white shadow-lg  min-h-[4rem] lg:px-[10rem]">
@@ -190,8 +202,9 @@ const BusBookingHome = () => {
               >
                 Login
               </a>
-              <a href="#" className="flex items-center  p-2 ">
-                <span className="hover:bg-gray-200 hover:text-purple-800 rounded-full">
+
+              <div onClick={handleTheme} className="flex items-center cursor-pointer ">
+                <span className="hover:bg-gray-200 hover:text-purple-800 rounded-full p-2">
                   <svg viewBox="0 0 24 24" fill="none" class="w-6 h-6">
                     <path
                       fill-rule="evenodd"
@@ -230,7 +243,9 @@ const BusBookingHome = () => {
                     ></path>
                   </svg>
                 </span> */}
-              </a>
+    
+              </div>
+
               {/* <p>Account</p> */}
             </div>
           </nav>
@@ -347,6 +362,8 @@ const BusBookingHome = () => {
           <LoginForm closeSubmenu={closeSubmenu} handelLogin={handelLogin} />
         )}
       </main>
+      </ThemeContext.Provider>
+
     </>
   );
 }

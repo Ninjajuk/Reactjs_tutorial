@@ -7,7 +7,7 @@ const ThemeContextexamle = () => {
   const [theme, setTheme] = useState('light');
 // const dark = useContext(ThemeContext);
 const className=theme
-console.log(className)
+// console.log(className)
     function handleTheme(){
       setTheme(theme === 'light' ? 'bg-gray-400' : 'light');
     //   console.log('theme chnaged',theme)
