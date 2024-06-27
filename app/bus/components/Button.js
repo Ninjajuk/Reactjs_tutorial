@@ -1,6 +1,6 @@
-// src/Button.js
+
 import React from 'react';
-import './buttonstyle.css'
+
 const Button = ({
   onClick,
   children,
@@ -9,9 +9,10 @@ const Button = ({
   isLoading = false,
   isDisabled = false,
   size = 'medium',
+  width = 'auto',
   ...props
 }) => {
-  const baseClasses = 'inline-flex items-center justify-center border border-transparent rounded-md font-medium transition duration-150 ease-in-out';
+  const baseClasses = ' inline-flex items-center justify-center border border-transparent rounded-md font-medium transition duration-150 ease-in-out';
 
   const variantClasses = {
     default: 'bg-gray-200 text-gray-700 hover:bg-gray-300',
@@ -33,6 +34,7 @@ const Button = ({
       className={`${baseClasses} ${variantClasses[variant]} ${sizeClasses[size]} ${isDisabled ? 'opacity-50 cursor-not-allowed' : ''}`}
       onClick={onClick}
       disabled={isDisabled || isLoading}
+      style={{ width }}
       {...props}
     >
       {isLoading ? <span className="loader mr-2"></span> : null}

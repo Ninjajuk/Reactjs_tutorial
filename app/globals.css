@@ -16,6 +16,12 @@
   }
 }
 
+
+.mobilesidebar{
+  /* transition: 0.5s; */
+  transition: 0.5s width;
+  
+}
 /* body {
   color: rgb(var(--foreground-rgb));
   background: linear-gradient(

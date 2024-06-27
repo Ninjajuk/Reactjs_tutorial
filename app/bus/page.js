@@ -72,8 +72,8 @@ const BusBookingHome = () => {
             </div>
             {mobilemenu && (
               <div
-                className={`absolute flex flex-col top-[4rem] left-0  w-64  h-[calc(100vh-4rem)] bg-white  transition-transform ease-in-out duration-1000 transform  overflow-y-auto  ${
-                  mobilemenu ? "transform translate-x-0 " : "-translate-x-full "
+                className={`absolute flex flex-col top-[4rem]  left-0    h-[calc(100vh-4rem)] bg-white  transition ease-in-out duration-1000  overflow-y-auto  ${
+                  mobilemenu ? " w-64" : " w-0"
                 }`}
               >
                 {/* <div className='w-full flex items-center justify-between p-4'>
