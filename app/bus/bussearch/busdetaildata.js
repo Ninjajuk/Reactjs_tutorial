@@ -2,6 +2,7 @@
 
 const busDetails = [
   {
+    id:1,
     startingFrom: "New York",
     startTime: "08:00 AM",
     busType: "Sleeper",
@@ -24,6 +25,7 @@ const busDetails = [
     rating: 4.5
   },
   {
+    id:2,
     startingFrom: "Los Angeles",
     startTime: "09:00 AM",
     busType: "Semi-Sleeper",
@@ -45,6 +47,7 @@ const busDetails = [
     rating: 4.0
   },
   {
+    id:3,
     startingFrom: "Chicago",
     startTime: "07:30 AM",
     busType: "Luxury",
@@ -68,6 +71,7 @@ const busDetails = [
     rating: 4.7
   },
   {
+    id:4,
     startingFrom: "Houston",
     startTime: "10:00 AM",
     busType: "Standard",
@@ -88,6 +92,7 @@ const busDetails = [
     rating: 3.8
   },
   {
+    id:5,
     startingFrom: "Miami",
     startTime: "06:00 AM",
     busType: "Sleeper",
@@ -110,6 +115,7 @@ const busDetails = [
     rating: 4.2
   },
   {
+    id:6,
     startingFrom: "Boston",
     startTime: "05:00 PM",
     busType: "Luxury",
@@ -133,6 +139,7 @@ const busDetails = [
     rating: 4.6
   },
   {
+    id:7,
     startingFrom: "Seattle",
     startTime: "07:00 AM",
     busType: "Standard",

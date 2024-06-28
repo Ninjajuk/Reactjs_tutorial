@@ -55,11 +55,10 @@ const BusBookingHome = () => {
     setFrom(to);
     setTo(from);
   };
+
+
   const usetheme = useContext(ThemeContext);
   const [theme, setTheme] = useState(usetheme);
-
-
-
       function handleTheme(){
     
         setTheme(theme === 'light' ? 'bg-gray-900 text-white' : 'light');

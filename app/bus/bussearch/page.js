@@ -1,21 +1,36 @@
-import React from 'react'
+'use client'
+import React, { useState } from 'react'
 import busDetails from './busdetaildata'
 import { FaBusAlt, FaClock, FaFlagCheckered, FaMapMarkerAlt, FaPlay } from 'react-icons/fa';
 import { MdOutlineFlag, MdOutlineTripOrigin } from 'react-icons/md';
 
 const BusSearchResultPage = () => {
+  // const [seatshow,setSeatShow]=useState(false)
+  // const handleShowSeat = (id) => {
+  //   if (id) {
+
+  //     setSeatShow(!seatshow)
+  //   }
+  //   console.log(`clicked on ${id} `)
+  // };
     
+  const [selectedItemId, setSelectedItemId] = useState(null);
+
+  const handleShowSeat = (id) => {
+    setSelectedItemId(selectedItemId === id ? null : id);
+    console.log(`clicked on ${id}`);
+  };
   return (
-    <main className="bg-violet-700 ">
+    <main className="bg-gray-100  py-12">
       <div className=" w-full lg:px-[10rem]">
-        <h1>BusSearchResultPage</h1>
+        <h1 className='py-4 text-lg lg:text-5xl font-extrabold text-purple-800 tighter'>Bus Search Result Page</h1>
 
         <div className="h-full min-h-24 w-full grid grid-cols-1 gap-2  ">
           {busDetails.map((item, index) => (
             <>
-              <div
-                key={index}
-                className="flex flex-col lg:flex-row p-4 rounded-md shadow-md bg-white"
+            <div key={item.id} className='flex flex-col p-4 rounded-md shadow-md bg-white'>
+            <div
+                className="flex flex-col lg:flex-row "
               >
                 <div className="lg:w-1/2 ">
                   <h1 className="px-2 py-2 text-gray-600 font-semibold text-lg">
@@ -92,14 +107,25 @@ const BusSearchResultPage = () => {
                     <span className="pl-2">{item.seatsAvailable}</span>
                   </p>
                   <div className="w-full flex  m-2">
-                    <button className="w-full p-2 text-white  bg-sky-800 rounded-md shadow-md">
+                    <button 
+                    onClick={()=>handleShowSeat(item.id)}
+                    className="w-full p-2 text-white  bg-sky-800 rounded-md shadow-md">
                       Select Seat
                     </button>
                   </div>
                 </div>
+            
               </div>
+              {selectedItemId === item.id && (
+            <div className="flex-none min-h-40 bg-gray-200">
+              Seat....
+            </div>
+          )}
+            </div>
+
             </>
           ))}
+     
         </div>
       </div>
     </main>
