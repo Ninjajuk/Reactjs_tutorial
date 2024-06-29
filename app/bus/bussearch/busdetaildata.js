@@ -163,3 +163,41 @@ const busDetails = [
 ];
 
 export default busDetails;
+
+ export const busSeat=[
+  { id: 1, status: 0, price: 89 },
+  { id: 2, status: 0, price: 66 },
+  { id: null, status: -1, price: null },
+  { id: 3, status: 0, price: 95 },
+  { id: 4, status: 0, price: 50 },
+  { id: 5, status: 0, price: 62 },
+  { id: 6, status: 0, price: 90 },
+  { id: null, status: -1, price: null },
+  { id: 7, status: 0, price: 68 },
+  { id: 8, status: 0, price: 57 },
+  { id: 9, status: 0, price: 93 },
+  { id: 10, status: 0, price: 58 },
+  { id: null, status: -1, price: null },
+  { id: 11, status: 0, price: 80 },
+  { id: 12, status: 0, price: 87 },
+  { id: 13, status: 0, price: 65 },
+  { id: 14, status: 0, price: 70 },
+  { id: null, status: -1, price: null },
+  { id: 15, status: 0, price: 78 },
+  { id: 16, status: 0, price: 62 },
+  { id: 17, status: 0, price: 77 },
+  { id: 18, status: 0, price: 79 },
+  { id: null, status: -1, price: null },
+  { id: 19, status: 0, price: 79 },
+  { id: 20, status: 0, price: 97 },
+  { id: 21, status: 0, price: 95 },
+  { id: 22, status: 0, price: 76 },
+  { id: null, status: -1, price: null },
+  { id: 23, status: 0, price: 53 },
+  { id: 24, status: 0, price: 65 },
+  { id: 25, status: 0, price: 87 },
+  { id: 26, status: 0, price: 85 },
+  { id: null, status: -1, price: null },
+  { id: 27, status: 0, price: 65 },
+  { id: 28, status: 0, price: 83 }
+]

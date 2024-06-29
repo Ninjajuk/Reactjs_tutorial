@@ -1,19 +1,12 @@
 'use client'
 import React, { useState } from 'react'
-import busDetails from './busdetaildata'
+import busDetails, { busSeat } from './busdetaildata'
 import { FaBusAlt, FaClock, FaFlagCheckered, FaMapMarkerAlt, FaPlay } from 'react-icons/fa';
 import { MdOutlineFlag, MdOutlineTripOrigin } from 'react-icons/md';
+import BusBookingHome from '../components/Seat/page';
 
 const BusSearchResultPage = () => {
-  // const [seatshow,setSeatShow]=useState(false)
-  // const handleShowSeat = (id) => {
-  //   if (id) {
 
-  //     setSeatShow(!seatshow)
-  //   }
-  //   console.log(`clicked on ${id} `)
-  // };
-    
   const [selectedItemId, setSelectedItemId] = useState(null);
 
   const handleShowSeat = (id) => {
@@ -21,7 +14,9 @@ const BusSearchResultPage = () => {
     console.log(`clicked on ${id}`);
   };
   return (
-    <main className="bg-gray-100  py-12">
+    <>
+
+        <main className="bg-gray-100  py-12">
       <div className=" w-full lg:px-[10rem]">
         <h1 className='py-4 text-lg lg:text-5xl font-extrabold text-purple-800 tighter'>Bus Search Result Page</h1>
 
@@ -117,8 +112,8 @@ const BusSearchResultPage = () => {
             
               </div>
               {selectedItemId === item.id && (
-            <div className="flex-none min-h-40 bg-gray-200">
-              Seat....
+            <div className="flex-none  bg-gray-200">
+              <BusBookingHome/>
             </div>
           )}
             </div>
@@ -127,8 +122,20 @@ const BusSearchResultPage = () => {
           ))}
      
         </div>
+        <div className='grid grid-cols-5 gap-2'>
+        {busSeat.map((item)=>(
+          <>
+  
+          <div type='text'  className="block w-9 h-9 py-3 text-sm font-extrabold text-center text-gray-900 bg-white border border-gray-300 rounded-lg focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"></div>
+    
+   
+          </>
+        ))}
+        </div>
       </div>
     </main>
+    </>
+
   );
 }
 

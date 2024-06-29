@@ -22,7 +22,7 @@ const Stepper = () => {
   };
 
   return (
-    <div className="w-full max-w-2xl mx-auto my-10 p-4 bg-gray-100">
+    <div className="w-full max-w-2xl mx-auto my-10 p-4 bg-gray-100 rounded-md">
       <div className="mb-4 overflow-x-auto ">
         <ul className="flex justify-between">
           {steps.map((step, index) => (
@@ -37,7 +37,7 @@ const Stepper = () => {
           ))}
         </ul>
       </div>
-      <div className="p-4  bg-white rounded-md shadow-md ">
+      <div className="p-4  bg-white rounded-md shadow-md h-full max-h-96 overflow-y-auto">
         {currentStep === 1 && <div><TravellersDetails/></div>}
         {currentStep === 2 && <div><PayeeDiscountDetails/></div>}
         {currentStep === 3 && <div><PaymentOption/></div>}

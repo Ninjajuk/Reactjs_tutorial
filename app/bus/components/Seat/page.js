@@ -32,8 +32,8 @@ const BusBookingHome = () => {
 
   return (
     <>
-      <h1 className='text-center text-lg font-bold text-gray-900 py-4'>Bus Booking App</h1>
-      <div className="flex justify-center items-center h-screen bg-gray-100">
+      {/* <h1 className='text-center text-lg font-bold text-gray-900 py-4'>Bus Booking App</h1> */}
+      <div className="flex justify-center items-center h-auto bg-gray-100">
         <div className="space-y-4">
           {seats.map((row, rowIndex) => (
             <div key={rowIndex} className="flex space-x-4">

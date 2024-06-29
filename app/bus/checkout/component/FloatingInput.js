@@ -34,17 +34,3 @@ const FloatingInput = () => {
 export default FloatingInput
 
 
-// .label-floating input(:placeholder-shown) ~ label{
-//     transition: all 0.2s ease-in-out;
-//   }
-//   .label-floating input:not(:placeholder-shown) ~ label {
-//     font-size: 0.7rem;
-//     transition: all 0.2s ease-in-out;
-//     color: #1f9d55;
-//     margin-top: -0.7rem;
-//     margin-left: 10px;
-//     background: white;
-//     display: block;
-//     padding: 2px 6px;
-//     width: fit-content;
-//   }

@@ -354,6 +354,20 @@ const BusBookingHome = () => {
             ))}
           </div>
           <FAQRelatedBooking />
+          <div className=' bg-gray-300 lg:px-[10rem]'>
+            <div className='flex flex-col lg:flex-row gap-2'>
+              <div className='w-full lg:w-2/3 bg-green-400 rounded-md h-full min-h-96'>1</div>
+              <div className='w-full lg:w-2/3 bg-red-400 rounded-md'>
+              <h1 className='py-8 text-2xl font-bold px-2'>News Latest</h1>
+              <ul className='p-4'>
+                <li>lorem ipsum</li>
+                <li>lorem ipsum</li>
+                <li>lorem ipsum</li>
+                <li>lorem ipsum</li>
+              </ul>
+              </div>
+            </div>
+          </div>
 
           <Footer1 />
         </section>
