@@ -48,7 +48,7 @@ export default function Home() {
     setSearch(item)
     setShowsuggestion(false)
   }
-
+console.log('combinedCities')
   return (
     <main className="flex min-h-screen flex-col items-center justify-between p-24">
       <h1>React Js</h1>

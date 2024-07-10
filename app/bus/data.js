@@ -56,7 +56,8 @@ export const cities = [
   "Longding",
   "Ruksin",
   "Deomali",
-  "Kanubari","Delhi"
+  "Kanubari",
+  "Delhi"
 ];
 
 export const navItems=[
