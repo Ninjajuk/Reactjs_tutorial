@@ -1,6 +1,7 @@
 
 'use client'
 import { useRef } from "react";
+import MyInput from "./MyInput";
 
 function RefHook() {
   const inputRef = useRef(null);
@@ -11,7 +12,8 @@ function RefHook() {
   return (
     <div>
       <h1>Hi Ref</h1>
-      <input ref={inputRef} type="text" className="p-2 bg-gray-100 border-3 mr-4"/>
+      <MyInput ref={inputRef}/>
+      <input  type="text" className="p-2 bg-gray-100 border-3 mr-4"/>
       <button onClick={handleRef} className="p-2 bg-red-500 rounded-full">Click</button>
     </div>
   );
