@@ -15,11 +15,15 @@ import {cities} from './data'
 
 import LoginForm from './components/LoginForm';
 import { ThemeContext } from '../hooks/useContext/context';
+import DateInput from './DateInput';
+import DatePicker from "react-datepicker";
 
+import "react-datepicker/dist/react-datepicker.css";
 
 const BusBookingHome = () => {
   const[opensubmenu,setOpensubmenu]=useState(false)
   const[mobilemenu,setMobileMenu]=useState(false)
+  const [startDate, setStartDate] = useState(null);
 
   const handlemobilemenuOpen=()=>{
     setMobileMenu(!mobilemenu)
@@ -311,11 +315,19 @@ const BusBookingHome = () => {
                 </div>
 
                 <div className="w-full lg:w-auto mb-2 lg:mb-0 lg:mr-2">
-                  <input
+                  {/* <input
                     type="date"
                     placeholder="Journey Date"
                     className="w-full bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 p-2.5"
-                  />
+                  /> */}
+                  {/* <DateInput/> */}
+                  <DatePicker 
+                  selected={startDate} 
+                  onChange={(date) => setStartDate(date)} 
+                  minDate={new Date()}
+                  placeholderText="Select a date"
+
+                  className='w-full bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 p-2.5'/>
                 </div>
                 <div className="w-full lg:w-auto">
                   <button className="w-full lg:w-auto p-2 bg-buttonPrimary rounded-md text-white">
