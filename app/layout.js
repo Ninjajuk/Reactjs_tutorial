@@ -3,6 +3,8 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 // import { Providers } from "./redux/provider";
 import '../app/style/variables.module.scss'
+import { AuthProvider } from "./hooks/contexts/AuthContext";
+import { ThemeProvider } from "./hooks/contexts/ThemeContext";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -13,11 +15,13 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    // <Providers>
+    <AuthProvider>
+      <ThemeProvider>
   
       <html lang="en">
         <body className={inter.className}>{children}</body>
       </html>
-    // </Providers>
+      </ThemeProvider>
+     </AuthProvider>
   );
 }

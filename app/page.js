@@ -10,14 +10,18 @@ export default function Home() {
 
   return (
     <>
-    <Navbar/>
+
+          <Navbar/>
     <main className="flex min-h-screen  items-center justify-center">
       <div className=" bg-white w-full max-w-md h-[14rem] rounded-md shadow-lg">
            <h1 className="py-2 text-center text-lg font-semibold">React Js</h1>
       </div>
    
 
-    </main></>
+    </main>
+
+
+    </>
 
   );
 }
